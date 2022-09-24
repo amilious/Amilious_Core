@@ -24,6 +24,8 @@ namespace Amilious.Core.Extensions {
     /// </summary>
     public static class Vector3IntExtensions {
         
+        #region Public Methods /////////////////////////////////////////////////////////////////////////////////////////
+        
         /// <summary>
         /// This method is used to convert a Vector3Int into a SerializableVector3Int.
         /// </summary>
@@ -129,5 +131,8 @@ namespace Amilious.Core.Extensions {
             return new Vector2Int(vector3Int.y, vector3Int.z);
         }
         
+        #endregion /////////////////////////////////////////////////////////////////////////////////////////////////////
+        
     }
+    
 }

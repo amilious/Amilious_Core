@@ -18,7 +18,12 @@ using UnityEngine;
 
 namespace Amilious.Core {
     
+    /// <summary>
+    /// This class is contains math operations for vectors.
+    /// </summary>
     public static class MathV {
+        
+        #region Public Methods /////////////////////////////////////////////////////////////////////////////////////////
         
         /// <summary>
         /// This method is used to get the angle in degrees based on
@@ -93,5 +98,8 @@ namespace Amilious.Core {
             return new Vector3(Mathf.Round(vector3.x), Mathf.Round(vector3.y), Mathf.Round(vector3.z));
         }
         
+        #endregion /////////////////////////////////////////////////////////////////////////////////////////////////////
+        
     }
+    
 }

@@ -24,90 +24,27 @@ namespace Amilious.Core {
     [Serializable]
     public enum ComparisonType {
         
+        //This variation represents ==
         Equal,
+        
+        //This variation represents (Max(a,b)-Min(a,b))<=delta
         ApproximatelyEqual,
+        
+        //This variation represents !=
         NotEqual,
+        
+        //This variation represents <
         LessThan,
+        
+        //This variation represents <=
         LessThanOrEqual,
+        
+        //This variation represents >
         GreaterThan,
+        
+        //This variation represents >=
         GreaterThanOrEqual
         
     }
-    
-    /// <summary>
-    /// This class is used to add methods to the <see cref="ComparisonType"/> enum.
-    /// </summary>
-    public static class ComparisonTypeExtension{
-        
-        #region Static Readonly Fields /////////////////////////////////////////////////////////////////////////////////
 
-        private static readonly Type FloatType = typeof(float);
-        private static readonly Type DoubleType = typeof(double);
-        private static readonly Type DecimalType = typeof(decimal);
-        private static readonly Type SByteType = typeof(sbyte);
-        private static readonly Type ByteType = typeof(byte);
-        private static readonly Type UShortType = typeof(ushort);
-        private static readonly Type ShortType = typeof(short);
-        private static readonly Type IntType = typeof(int);
-        private static readonly Type UIntType = typeof(uint);
-        private static readonly Type LongType = typeof(long);
-        private static readonly Type ULongType = typeof(ulong);
-        
-        #endregion /////////////////////////////////////////////////////////////////////////////////////////////////////
-        
-        #region ////////////////////////////////////////////////////////////////////////////////////////////////////////
-        
-        /// <summary>
-        /// This method is used to compare two short values.
-        /// </summary>
-        /// <param name="type">The comparison type.</param>
-        /// <param name="valueA">The first value.</param>
-        /// <param name="valueB">The second value.</param>
-        /// <param name="approximateDelta">A delta value use if the comparison type is approximate.</param>
-        /// <returns>The result of the comparison.</returns>
-        /// <exception cref="ArgumentOutOfRangeException">Thrown if an unhandled comparison type is used.</exception>
-        public static bool Compare<T>(this ComparisonType type, T valueA, T valueB, T approximateDelta = default) 
-            where T : IComparable<T>, IConvertible, IEquatable<T>, IFormattable {
-            switch(type) {
-                case ComparisonType.Equal: return valueA.CompareTo(valueB) == 0;
-                case ComparisonType.NotEqual: return valueA.CompareTo(valueB) != 0;
-                case ComparisonType.LessThan: return valueA.CompareTo(valueB) < 0;
-                case ComparisonType.LessThanOrEqual: return valueA.CompareTo(valueB) <= 0;
-                case ComparisonType.GreaterThan: return valueA.CompareTo(valueB) > 0;
-                case ComparisonType.GreaterThanOrEqual: return valueA.CompareTo(valueB) >= 0;
-                case ComparisonType.ApproximatelyEqual: return Approximate(valueA, valueB, approximateDelta);
-                default: throw new ArgumentOutOfRangeException(nameof(type), type, null);
-            }
-        }
-
-        /// <summary>
-        /// This method is used to check if two values are approximately equal.
-        /// </summary>
-        /// <param name="valueA">The first value.</param>
-        /// <param name="valueB">The second value.</param>
-        /// <param name="delta">The acceptable difference between the numbers.</param>
-        /// <typeparam name="T">The type of number.</typeparam>
-        /// <returns>True if the two values are approximately equal.</returns>
-        private static bool Approximate<T>(T valueA, T valueB, T delta = default) 
-            where T : IComparable<T>, IConvertible, IEquatable<T>, IFormattable {
-            var rawValues = new [] { valueA, valueB, delta };
-            var type = typeof(T);
-            if(type == FloatType) return rawValues is float[] values && Math.Abs(Math.Max(values[0],values[1]) -Math.Min(values[0],values[1])) <= values[2];
-            if(type == DoubleType) return rawValues is double[] values && Math.Abs(Math.Max(values[0],values[1]) -Math.Min(values[0],values[1])) <= values[2];
-            if(type == DecimalType) return rawValues is decimal[] values && Math.Abs(Math.Max(values[0],values[1]) -Math.Min(values[0],values[1])) <= values[2];
-            if(type == SByteType) return rawValues is sbyte[] values && Math.Abs(Math.Max(values[0],values[1]) -Math.Min(values[0],values[1])) <= values[2];
-            if(type == ByteType) return rawValues is byte[] values && Math.Abs(Math.Max(values[0],values[1]) -Math.Min(values[0],values[1])) <= values[2];
-            if(type == ShortType) return rawValues is short[] values && Math.Abs(Math.Max(values[0],values[1]) -Math.Min(values[0],values[1])) <= values[2];
-            if(type == UShortType) return rawValues is ushort[] values && Math.Max(values[0],values[1]) -Math.Min(values[0],values[1]) <= values[2];
-            if(type == IntType) return rawValues is int[] values && Math.Abs(Math.Max(values[0],values[1]) -Math.Min(values[0],values[1])) <= values[2];
-            if(type == UIntType) return rawValues is uint[] values && Math.Max(values[0],values[1]) -Math.Min(values[0],values[1]) <= values[2];
-            if(type == LongType) return rawValues is long[] values && Math.Abs(Math.Max(values[0],values[1]) -Math.Min(values[0],values[1])) <= values[2];
-            if(type == ULongType) return rawValues is ulong[] values && Math.Max(values[0],values[1]) -Math.Min(values[0],values[1]) <= values[2];
-            return valueA.CompareTo(valueB) == 0;
-        }
-        
-        #endregion /////////////////////////////////////////////////////////////////////////////////////////////////////
-        
-    }
-    
 }

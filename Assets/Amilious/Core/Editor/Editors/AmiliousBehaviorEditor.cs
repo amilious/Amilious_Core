@@ -23,4 +23,5 @@ namespace Amilious.Core.Editor.Editors {
     /// </summary>
     [CustomEditor(typeof(AmiliousBehavior), true, isFallback = true)]
     public class AmiliousBehaviorEditor : AmiliousEditor { }
+    
 }

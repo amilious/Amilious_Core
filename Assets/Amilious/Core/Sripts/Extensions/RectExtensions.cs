@@ -23,6 +23,8 @@ namespace Amilious.Core.Extensions {
     /// </summary>
     public static class RectExtensions {
         
+        #region Public Methods /////////////////////////////////////////////////////////////////////////////////////////
+        
         /// <summary>
         /// This method is used to get a <see cref="Vector2"/> from the <see cref="Rect"/>'s min values.
         /// </summary>
@@ -30,7 +32,6 @@ namespace Amilious.Core.Extensions {
         /// <returns>The minimum position.</returns>
         public static Vector2 MinPosition(this Rect rect) => new Vector2(rect.xMin, rect.yMin);
 
-        
         /// <summary>
         /// This method is used to get a <see cref="Vector2"/> from the <see cref="Rect"/>'s max values.
         /// </summary>
@@ -38,6 +39,8 @@ namespace Amilious.Core.Extensions {
         /// <returns>The maximum position.</returns>
         public static Vector2 MaxPosition(this Rect rect) => new Vector2(rect.xMax, rect.yMax);
 
+        #endregion /////////////////////////////////////////////////////////////////////////////////////////////////////
 
     }
+    
 }

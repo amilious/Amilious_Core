@@ -25,6 +25,8 @@ namespace Amilious.Core.Editor.Extensions {
     /// </summary>
     public static class CustomPropertyDrawerExtensions {
         
+        #region Public Methods /////////////////////////////////////////////////////////////////////////////////////////
+        
         /// <summary>
         /// This method is used to get the internal type field of a custom property drawer.
         /// </summary>
@@ -41,5 +43,8 @@ namespace Amilious.Core.Editor.Extensions {
             return true;
         }
         
+        #endregion /////////////////////////////////////////////////////////////////////////////////////////////////////
+        
     }
+    
 }

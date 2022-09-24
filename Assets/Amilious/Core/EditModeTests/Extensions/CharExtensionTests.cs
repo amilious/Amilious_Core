@@ -19,8 +19,13 @@ using Amilious.Core.Extensions;
 
 namespace Amilious.Core.EditModeTests.Extensions {
     
+    /// <summary>
+    /// This class is used to test the extension methods from <see cref="CharExtensions"/>.
+    /// </summary>
     public class CharExtensionTests {
 
+        #region Private Fields /////////////////////////////////////////////////////////////////////////////////////////
+        
         private static readonly char[] Vowels = new char[] { 'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U' };
 
         private static readonly char[] Consonants = new char[] {
@@ -29,6 +34,10 @@ namespace Amilious.Core.EditModeTests.Extensions {
         };
 
         private static readonly char[] Neither = new char[] { ' ', '.', '@', '#', '*', '\t', '\n' };
+        
+        #endregion /////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        #region Test Methods ///////////////////////////////////////////////////////////////////////////////////////////
         
         [Test]
         public void IsVowel() {
@@ -43,6 +52,8 @@ namespace Amilious.Core.EditModeTests.Extensions {
             foreach(var c in Vowels) Assert.False(c.IsConsonant());
             foreach(var c in Neither) Assert.False(c.IsConsonant());
         }
+        
+        #endregion /////////////////////////////////////////////////////////////////////////////////////////////////////
         
     }
     

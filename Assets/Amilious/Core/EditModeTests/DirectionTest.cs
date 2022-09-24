@@ -14,15 +14,24 @@
 //  using it legally. Check the asset store or join the discord for the license that applies for this script.         //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
-using NUnit.Framework;
 using UnityEngine;
+using NUnit.Framework;
 
 namespace Amilious.Core.EditModeTests {
     
+    /// <summary>
+    /// This class is used to test the extension methods from <see cref="DirectionUtils"/>.
+    /// </summary>
     public class DirectionTest {
 
-        public static Vector3Int Forward = new Vector3Int(0, 0, 1);
-        public static Vector3Int Back = new Vector3Int(0, 0, -1);
+        #region Private Fields /////////////////////////////////////////////////////////////////////////////////////////
+        
+        private static readonly Vector3Int Forward = new Vector3Int(0, 0, 1);
+        private static readonly Vector3Int Back = new Vector3Int(0, 0, -1);
+        
+        #endregion /////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        #region Test Methods ///////////////////////////////////////////////////////////////////////////////////////////
         
         [Test]
         public void DirectionFromVector3IntPoints() {
@@ -222,5 +231,8 @@ namespace Amilious.Core.EditModeTests {
             Assert.AreEqual(Direction.DownEast,pointA.DirectionToPointXY(downEast));
         }
         
+        #endregion /////////////////////////////////////////////////////////////////////////////////////////////////////
+        
     }
+    
 }

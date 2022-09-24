@@ -19,8 +19,13 @@ using NUnit.Framework;
 
 namespace Amilious.Core.EditModeTests {
     
+    /// <summary>
+    /// This class is used to test the extension methods from <see cref="Seed"/>.
+    /// </summary>
     public class SeedTest {
 
+        #region Test Methods ///////////////////////////////////////////////////////////////////////////////////////////
+        
         [Test]
         public void NextFloat() {
 
@@ -85,6 +90,7 @@ namespace Amilious.Core.EditModeTests {
             
         }
         
+        #endregion /////////////////////////////////////////////////////////////////////////////////////////////////////
         
     }
 }

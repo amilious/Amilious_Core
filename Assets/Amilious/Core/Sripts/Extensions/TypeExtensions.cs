@@ -23,6 +23,8 @@ namespace Amilious.Core.Extensions {
     /// </summary>
     public static class TypeExtensions {
         
+        #region Public Methods /////////////////////////////////////////////////////////////////////////////////////////
+        
         /// <summary>
         /// This method is used to split a types name using camel case.
         /// </summary>
@@ -45,6 +47,8 @@ namespace Amilious.Core.Extensions {
         /// <param name="implements">The type that you want to check if is inherited from.</param>
         /// <returns>True if <paramref name="type"/> inherits <paramref name="implements"/>.</returns>
         public static bool Implements(this Type type, Type implements) => implements.IsAssignableFrom(type);
+        
+        #endregion /////////////////////////////////////////////////////////////////////////////////////////////////////
         
     }
     

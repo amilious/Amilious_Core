@@ -21,8 +21,8 @@ using System.Linq;
 using System.Reflection;
 using Amilious.Core.Attributes;
 using System.Collections.Generic;
-using Amilious.Core.Editor.Extensions;
 using Amilious.Core.Editor.Modifiers;
+using Amilious.Core.Editor.Extensions;
 
 namespace Amilious.Core.Editor.Drawers {
     
@@ -127,7 +127,7 @@ namespace Amilious.Core.Editor.Drawers {
             AllPropertyModifiers.Clear();
             _staticInitialized = false;
             StaticInitialize();
-            Debug.Log(AmiliousCore.MakeTitle("Reinitialized Amilious Property Drawers"));
+            Debug.Log(Amilious.MakeTitle("Reinitialized Amilious Property Drawers"));
         }
         
         /// <summary>
@@ -141,7 +141,8 @@ namespace Amilious.Core.Editor.Drawers {
             }
             _initialized = true;
             StaticInitialize();
-            var modifiers = fieldInfo.GetCustomAttributes(typeof(AmiliousModifierAttribute), true).Cast<AmiliousModifierAttribute>().ToList();
+            var modifiers = fieldInfo.GetCustomAttributes(typeof(AmiliousModifierAttribute),
+                true).Cast<AmiliousModifierAttribute>().ToList();
             foreach(var modifier in modifiers) {
                 if(TryCreatePropertyModifier(modifier, out var modifierDrawer))
                     _modifiers.Add(modifier, modifierDrawer);
@@ -227,4 +228,5 @@ namespace Amilious.Core.Editor.Drawers {
         #endregion /////////////////////////////////////////////////////////////////////////////////////////////////////
         
     }
+    
 }

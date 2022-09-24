@@ -38,9 +38,13 @@ namespace Amilious.Core.Editor.Editors {
         /// <summary>
         /// This property is used to get and cache the box style.
         /// </summary>
-        private static GUIStyle BoxStyle => _boxStyle ?? 
-                new GUIStyle(EditorStyles.helpBox){ richText = true, wordWrap = true, fontStyle = FontStyle.Bold};
-        
+        private static GUIStyle BoxStyle {
+            get {
+                return _boxStyle ?? (_boxStyle = new GUIStyle(EditorStyles.helpBox)
+                    { richText = true, wordWrap = true, fontStyle = FontStyle.Bold });
+            }
+        }
+
         #endregion /////////////////////////////////////////////////////////////////////////////////////////////////////
         
         #region Protected Methods //////////////////////////////////////////////////////////////////////////////////////
@@ -70,4 +74,5 @@ namespace Amilious.Core.Editor.Editors {
         #endregion /////////////////////////////////////////////////////////////////////////////////////////////////////
 
     }
+    
 }

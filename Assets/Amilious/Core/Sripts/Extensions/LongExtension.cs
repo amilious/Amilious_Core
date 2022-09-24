@@ -23,6 +23,8 @@ namespace Amilious.Core.Extensions {
     /// </summary>
     public static class LongExtension {
 
+        #region Public Methods /////////////////////////////////////////////////////////////////////////////////////////
+        
         /// <summary>
         /// This method is used to get the base 64 string from a long.
         /// </summary>
@@ -63,5 +65,8 @@ namespace Amilious.Core.Extensions {
             return $"{i} {singular}s";
         }
         
+        #endregion /////////////////////////////////////////////////////////////////////////////////////////////////////
+        
     }
+    
 }

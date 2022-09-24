@@ -17,11 +17,26 @@
 using System;
 
 namespace Amilious.Core {
-    
+
     /// <summary>
     /// This enum is used to represent an update loop.
     /// </summary>
     [Serializable]
-    public enum UpdateType { Update, FixedUpdate, LateUpdate }
+    public enum UpdateType {
+        
+        //This variation represents the normal update.
+        Update, 
+        
+        /// <summary>
+        /// This variation represents the fixed update.
+        /// </summary>
+        FixedUpdate, 
+        
+        /// <summary>
+        /// This variation represents the late update.
+        /// </summary>
+        LateUpdate
+        
+    }
     
 }

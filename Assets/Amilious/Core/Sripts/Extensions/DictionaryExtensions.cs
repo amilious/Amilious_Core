@@ -24,6 +24,8 @@ namespace Amilious.Core.Extensions {
     /// </summary>
     public static class DictionaryExtensions {
         
+        #region Public Methods /////////////////////////////////////////////////////////////////////////////////////////
+        
         /// <summary>
         /// This method will try to get a value from the dictionary using the provided key then cast
         /// the object as the <see cref="value"/> type.
@@ -72,6 +74,8 @@ namespace Amilious.Core.Extensions {
         }
         
         #endif
+        
+        #endregion /////////////////////////////////////////////////////////////////////////////////////////////////////
         
     }
     

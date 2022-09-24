@@ -138,8 +138,10 @@ namespace Amilious.Core {
             base64Id = id.ToBase64String();
             var path = UnityEditor.AssetDatabase.GetAssetPath(this)??name;
             if(string.IsNullOrWhiteSpace(path)) path = GetType().SplitCamelCase();
-            if(oldId==0) Debug.LogFormat("{0}\n<color=#8888ff>Generated id for:</color>\t\t<color=#ff88ff><b>{1}</b></color>\n<color=#8888ff>Id:</color>\t\t\t<color=#88ff88>{2}</color>",AmiliousCore.MakeTitle("Generating Amilious Scriptable Object Id"), path,id);
-            else Debug.LogFormat("{0}\n<color=#8888ff>Regenerated id for:</color>\t<color=#ff88ff><b>{1}</b></color>\n<color=#8888ff>New Id:</color>\t\t\t<color=#88ff88>{2}</color>\n<color=#8888ff>Old Id:</color>\t\t\t<color=#ff8888>{3}</color>", AmiliousCore.MakeTitle("Generating Amilious Scriptable Object Id"), path,id,oldId);
+            if(oldId==0) Debug.LogFormat("{0}\n<color=#8888ff>Generated id for:</color>\t\t<color=#ff88ff><b>{1}</b></color>\n<color=#8888ff>Id:</color>\t\t\t<color=#88ff88>{2}</color>",
+                Amilious.MakeTitle("Generating Amilious Scriptable Object Id"), path,id);
+            else Debug.LogFormat("{0}\n<color=#8888ff>Regenerated id for:</color>\t<color=#ff88ff><b>{1}</b></color>\n<color=#8888ff>New Id:</color>\t\t\t<color=#88ff88>{2}</color>\n<color=#8888ff>Old Id:</color>\t\t\t<color=#ff8888>{3}</color>", 
+                Amilious.MakeTitle("Generating Amilious Scriptable Object Id"), path,id,oldId);
             return id;
         }
 
@@ -184,7 +186,8 @@ namespace Amilious.Core {
                 }
                 _cachedIds.Add(asset.Id);
             }
-            Debug.LogFormat("{0}\n<color=#88ff88>Unique Objects:</color>\t\t<color=#ff88ff><b>{1}</b></color>\t<color=#8888ff>Fixed Ids:</color>\t<color=#ff8888>{2}</color>",AmiliousCore.MakeTitle("Fixed Amilious Scriptable Object Ids"), _cachedIds.Count,fixedIds);
+            Debug.LogFormat("{0}\n<color=#88ff88>Unique Objects:</color>\t\t<color=#ff88ff><b>{1}</b></color>\t<color=#8888ff>Fixed Ids:</color>\t<color=#ff8888>{2}</color>",
+                Amilious.MakeTitle("Fixed Amilious Scriptable Object Ids"), _cachedIds.Count,fixedIds);
         }
         
         /// <summary>
@@ -203,7 +206,8 @@ namespace Amilious.Core {
                 asset.GenerateId();
                 _cachedIds.Add(asset.Id);
             }
-            Debug.LogFormat("{0}\n<color=#88ff88>Regenerated Ids:</color>\t\t<color=#88FF88><b>{1}</b></color>",AmiliousCore.MakeTitle("Regenerated Amilious Scriptable Object Ids"), _cachedIds.Count);
+            Debug.LogFormat("{0}\n<color=#88ff88>Regenerated Ids:</color>\t\t<color=#88FF88><b>{1}</b></color>",
+                Amilious.MakeTitle("Regenerated Amilious Scriptable Object Ids"), _cachedIds.Count);
         }
         
         #endif
@@ -218,6 +222,8 @@ namespace Amilious.Core {
     /// <typeparam name="T">The type of <see cref="AmiliousScriptableObject"/> to be loaded.</typeparam>
     public abstract class AmiliousScriptableObject<T> : AmiliousScriptableObject where T : AmiliousScriptableObject {
 
+        #region Public Methods /////////////////////////////////////////////////////////////////////////////////////////
+        
         /// <inheritdoc />
         public sealed override bool NeedsToBeLoadableById => true;
         
@@ -228,6 +234,8 @@ namespace Amilious.Core {
         /// <returns>The loaded object if able to be loaded, otherwise null.</returns>
         public static T LoadFromId(long id) => AmiliousScriptableObjectLoader.LoadFromId<T>(id);
 
+        #endregion /////////////////////////////////////////////////////////////////////////////////////////////////////
+        
     }
     
 }

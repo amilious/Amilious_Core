@@ -19,8 +19,13 @@ using NUnit.Framework;
 
 namespace Amilious.Core.PlayModeTests {
     
+    /// <summary>
+    /// This class is used to test the extension methods from <see cref="Amilious"/>.
+    /// </summary>
     public class AmiliousTests {
 
+        #region Test Methods ///////////////////////////////////////////////////////////////////////////////////////////
+        
         [Test]
         public void FindGameObjectByName() {
             var go = new GameObject("test");
@@ -28,5 +33,8 @@ namespace Amilious.Core.PlayModeTests {
             Assert.True(go == found);
         }
 
+        #endregion /////////////////////////////////////////////////////////////////////////////////////////////////////
+        
     }
+    
 }

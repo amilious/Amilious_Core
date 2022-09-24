@@ -14,17 +14,18 @@
 //  using it legally. Check the asset store or join the discord for the license that applies for this script.         //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
-using System;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering;
 
 namespace Amilious.Core.Extensions {
     
     /// <summary>
-    /// This class is used to add methods to the color class.
+    /// This class is used to add methods to the <see cref="Color"/> class.
     /// </summary>
     public static class ColorExtensions {
 
+        #region Public Methods /////////////////////////////////////////////////////////////////////////////////////////
+        
         /// <summary>
         /// This method is used to get the RGBA hex value of the color.
         /// </summary>
@@ -182,5 +183,8 @@ namespace Amilious.Core.Extensions {
             return result;
         }
         
+        #endregion /////////////////////////////////////////////////////////////////////////////////////////////////////
+        
     }
+    
 }

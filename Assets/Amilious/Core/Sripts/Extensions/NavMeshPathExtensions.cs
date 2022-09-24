@@ -24,6 +24,8 @@ namespace Amilious.Core.Extensions {
     /// </summary>
     public static class NavMeshPathExtensions {
         
+        #region Public Methods /////////////////////////////////////////////////////////////////////////////////////////
+        
         /// <summary>
         /// This method is used to get the distance of the current path.
         /// </summary>
@@ -38,5 +40,8 @@ namespace Amilious.Core.Extensions {
             return total;
         }
         
+        #endregion /////////////////////////////////////////////////////////////////////////////////////////////////////
+        
     }
+    
 }

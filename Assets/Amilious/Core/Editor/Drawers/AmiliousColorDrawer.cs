@@ -14,12 +14,13 @@
 //  using it legally. Check the asset store or join the discord for the license that applies for this script.         //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
-using System.Linq;
-using Amilious.Core.Attributes;
-using Amilious.Core.Editor.Extensions;
+
 using UnityEditor;
 using UnityEngine;
+using System.Linq;
 using Amilious.Core.Extensions;
+using Amilious.Core.Attributes;
+using Amilious.Core.Editor.Extensions;
 
 namespace Amilious.Core.Editor.Drawers {
     
@@ -35,9 +36,9 @@ namespace Amilious.Core.Editor.Drawers {
         /// <inheritdoc />
         protected override void AmiliousOnGUI(Rect position, SerializedProperty property, GUIContent label) {
 
-            var att = property.GetAttributes<AmiliousColorAttribute>().FirstOrDefault()??new AmiliousColorAttribute();
-            
-            
+            var att = property.GetAttributes<AmiliousColorAttribute>()
+                .FirstOrDefault()??new AmiliousColorAttribute();
+
             var oldColor = property.colorValue;
             var oldHex = '#'+oldColor.HtmlRGB(att.ShowAlpha);
             var newHex = oldHex;
@@ -66,6 +67,6 @@ namespace Amilious.Core.Editor.Drawers {
         
         #endregion /////////////////////////////////////////////////////////////////////////////////////////////////////
         
-        
     }
+    
 }

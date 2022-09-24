@@ -25,6 +25,8 @@ namespace Amilious.Core.Extensions {
     /// </summary>
     public static class GameObjectExtensions {
 
+        #region Public Methods /////////////////////////////////////////////////////////////////////////////////////////
+        
         /// <summary>
         /// This method is used to try get the components of the given type.
         /// </summary>
@@ -110,6 +112,8 @@ namespace Amilious.Core.Extensions {
                 else Object.Destroy(component);
             }
         }
+        
+        #endregion /////////////////////////////////////////////////////////////////////////////////////////////////////
         
     }
     

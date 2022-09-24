@@ -49,7 +49,7 @@ namespace Amilious.Core {
         /// <summary>
         /// This dictionary is used to keep track if a given type has been initialized.
         /// </summary>
-        private static Dictionary<Type, bool> _initializedResources;
+        private static readonly Dictionary<Type, bool> InitializedResources = new Dictionary<Type, bool>();
 
         /// <summary>
         /// This dictionary is used to keep track of the loaded AmiliousScriptableObjects.
@@ -94,8 +94,8 @@ namespace Amilious.Core {
         /// <param name="type">The type of the asset that you want to initialize.</param>
         /// <typeparam name="T">The type of the asset that you want to initialize.</typeparam>
         private static void InitializeResources<T>(Type type) where T : AmiliousScriptableObject {
-            if(_initializedResources.TryGetValue(type, out var result) && result) return;
-            _initializedResources[type] = true;
+            if(InitializedResources.TryGetValue(type, out var result) && result) return;
+            InitializedResources[type] = true;
             LoadedResourceItems.TryAdd(type, new Dictionary<long, AmiliousScriptableObject>());
             CachedResourcePaths.TryAdd(type, new Dictionary<long, string>());
             var assets = Resources.LoadAll<T>(string.Empty) ?? Array.Empty<T>();

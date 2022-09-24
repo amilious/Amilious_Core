@@ -19,8 +19,13 @@ using Amilious.Core.Extensions;
 
 namespace Amilious.Core.EditModeTests.Extensions {
     
+    /// <summary>
+    /// This class is used to test the extension methods from <see cref="ArrayExtensions"/>.
+    /// </summary>
     public class ArrayExtensionsTest {
 
+        #region Test Methods ///////////////////////////////////////////////////////////////////////////////////////////
+        
         [Test]
         public void Modify() {
             var ary = new int[] { 1, 1, 1, 1, 1 };
@@ -54,6 +59,8 @@ namespace Amilious.Core.EditModeTests.Extensions {
             Assert.AreEqual(2,ary1[3]);
             Assert.AreEqual(1,ary1[4]);
         }
+        
+        #endregion /////////////////////////////////////////////////////////////////////////////////////////////////////
         
     }
     

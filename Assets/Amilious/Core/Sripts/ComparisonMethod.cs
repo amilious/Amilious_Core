@@ -15,8 +15,9 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
 using System;
-using Amilious.Core.Attributes;
 using UnityEngine;
+using Amilious.Core.Attributes;
+using Amilious.Core.Extensions;
 
 namespace Amilious.Core {
 

@@ -15,10 +15,21 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
 namespace Amilious.Core {
-    
+
     /// <summary>
     /// This enum is used to represent a position on an axis.
     /// </summary>
-    public enum AxisPos {Min, Zero, Max}
+    public enum AxisPos {
+        
+        //The lowest possible position
+        Min, 
+        
+        //The middle position.
+        Zero, 
+        
+        //the highest possible position
+        Max
+        
+    }
     
 }

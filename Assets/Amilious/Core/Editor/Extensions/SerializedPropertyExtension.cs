@@ -27,6 +27,8 @@ namespace Amilious.Core.Editor.Extensions {
     /// </summary>
     public static class SerializedPropertyExtension {
 
+        #region Public Methods /////////////////////////////////////////////////////////////////////////////////////////
+        
         /// <summary>
         /// This method is used to get the attributes applied to the serialized property.
         /// </summary>
@@ -82,5 +84,8 @@ namespace Amilious.Core.Editor.Extensions {
             return property?.serializedObject?.FindProperty(property.GetBasePath() + propertyName);
         }
         
+        #endregion /////////////////////////////////////////////////////////////////////////////////////////////////////
+        
     }
+    
 }

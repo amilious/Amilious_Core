@@ -23,6 +23,8 @@ namespace Amilious.Core.Extensions {
     /// </summary>
     public static class Texture2DExtensions {
         
+        #region Public Methods /////////////////////////////////////////////////////////////////////////////////////////
+        
         /// <summary>
         /// This method is used to add a watermark to another texture in the bottom-right-hand corner.
         /// </summary>
@@ -71,6 +73,8 @@ namespace Amilious.Core.Extensions {
             return result;
         }
         
+        #endregion /////////////////////////////////////////////////////////////////////////////////////////////////////
         
     }
+    
 }

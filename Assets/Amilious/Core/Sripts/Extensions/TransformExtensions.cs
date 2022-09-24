@@ -24,6 +24,8 @@ namespace Amilious.Core.Extensions {
     /// </summary>
     public static class TransformExtensions {
         
+        #region Public Methods /////////////////////////////////////////////////////////////////////////////////////////
+        
         /// <summary>
         /// This method is used to get a direction from the given angle.
         /// </summary>
@@ -83,5 +85,8 @@ namespace Amilious.Core.Extensions {
             return transform.parent.GetPath() + "/" + transform.name;
         }
         
+        #endregion /////////////////////////////////////////////////////////////////////////////////////////////////////
+        
     }
+    
 }

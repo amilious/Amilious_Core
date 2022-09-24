@@ -24,6 +24,8 @@ namespace Amilious.Core.Extensions {
     /// </summary>
     public static class Vector2Extensions {
         
+         #region Public Methods ////////////////////////////////////////////////////////////////////////////////////////
+         
         /// <summary>
         /// This method is used to convert a Vector2 into a SerializableVector2.
         /// </summary>
@@ -44,5 +46,8 @@ namespace Amilious.Core.Extensions {
             y = vector2Int.y;
         }
         
+        #endregion /////////////////////////////////////////////////////////////////////////////////////////////////////
+        
     }
+     
 }

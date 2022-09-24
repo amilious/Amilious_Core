@@ -24,10 +24,15 @@ namespace Amilious.Core.Extensions {
     /// </summary>
     public static class CancellationTokenSourceExtensions {
 
+        #region Public Methods /////////////////////////////////////////////////////////////////////////////////////////
+        
         /// <inheritdoc cref="CancellationTokenPool.ReturnToken"/>
         public static void ReturnToPool(this CancellationTokenSource token) {
             CancellationTokenPool.ReturnToken(token);
         }
         
+        #endregion /////////////////////////////////////////////////////////////////////////////////////////////////////
+        
     }
+    
 }

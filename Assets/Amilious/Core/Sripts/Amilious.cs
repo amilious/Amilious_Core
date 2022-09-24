@@ -14,6 +14,7 @@
 //  using it legally. Check the asset store or join the discord for the license that applies for this script.         //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
+using Amilious.Core.Extensions;
 using UnityEngine;
 
 namespace Amilious.Core {
@@ -47,6 +48,15 @@ namespace Amilious.Core {
                 if(result != null) return result;
             }
             return null;
+        }
+        
+        /// <summary>
+        /// This method is used to make a title for a log message.
+        /// </summary>
+        /// <param name="title">The text that you want in the title.</param>
+        /// <returns>The generated title string.</returns>
+        public static string MakeTitle(string title) {
+            return title.PadText('#', 60, 10).SetColor("ffff88");
         }
         
     }

@@ -21,6 +21,8 @@ namespace Amilious.Core.Extensions {
     /// </summary>
     public static class FloatExtensions {
         
+        #region Public Methods /////////////////////////////////////////////////////////////////////////////////////////
+        
         /// <summary>
         /// This method is used to check if a float value is an integer.
         /// </summary>
@@ -31,5 +33,8 @@ namespace Amilious.Core.Extensions {
             return value -x == 0;
         }
         
+        #endregion /////////////////////////////////////////////////////////////////////////////////////////////////////
+        
     }
+    
 }

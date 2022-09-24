@@ -24,6 +24,8 @@ namespace Amilious.Core.Extensions {
     /// </summary>
     public static class QuaternionExtensions {
         
+        #region Public Methods /////////////////////////////////////////////////////////////////////////////////////////
+        
         /// <summary>
         /// This method is used to convert a Quaternion into a SerializableQuaternion.
         /// </summary>
@@ -33,5 +35,8 @@ namespace Amilious.Core.Extensions {
             return new SerializableQuaternion(quaternion);
         }
         
+        #endregion /////////////////////////////////////////////////////////////////////////////////////////////////////
+        
     }
+    
 }

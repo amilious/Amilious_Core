@@ -18,7 +18,6 @@ using System;
 using System.Linq;
 using System.Text;
 using UnityEditor;
-using UnityEditor.PackageManager.UI;
 using UnityEngine;
 
 namespace Amilious.Core.Editor {
@@ -64,7 +63,7 @@ namespace Amilious.Core.Editor {
             }
             if(!changed) return added;
             PlayerSettings.SetScriptingDefineSymbolsForGroup(currentTarget, definesString);
-            Debug.Log(AmiliousCore.MakeTitle($"Added {added} {name} Define Symbols"));
+            Debug.Log(Amilious.MakeTitle($"Added {added} {name} Define Symbols"));
             return added;
         }
 
@@ -93,7 +92,7 @@ namespace Amilious.Core.Editor {
             }
             if(!changed) return removed;
             PlayerSettings.SetScriptingDefineSymbolsForGroup(currentTarget, StringBuilder.ToString());
-            Debug.Log(AmiliousCore.MakeTitle($"Removed {removed} {name} Define Symbols"));
+            Debug.Log(Amilious.MakeTitle($"Removed {removed} {name} Define Symbols"));
             return removed;
         }
 
@@ -113,4 +112,5 @@ namespace Amilious.Core.Editor {
         #endregion /////////////////////////////////////////////////////////////////////////////////////////////////////
         
     }
+    
 }

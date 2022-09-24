@@ -23,6 +23,8 @@ namespace Amilious.Core.Extensions {
     /// </summary>
     public static class GizmoExtensions {
         
+        #region Public Methods /////////////////////////////////////////////////////////////////////////////////////////
+        
         /// <summary>
         /// Draws a wire arc.
         /// </summary>
@@ -49,5 +51,8 @@ namespace Amilious.Core.Extensions {
             Gizmos.DrawLine(posA, initialPos);
         }
         
+        #endregion /////////////////////////////////////////////////////////////////////////////////////////////////////
+        
     }
+    
 }

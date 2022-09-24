@@ -34,4 +34,5 @@ namespace Amilious.Core.Editor {
         public string Link { get; set; }
         
     }
+    
 }

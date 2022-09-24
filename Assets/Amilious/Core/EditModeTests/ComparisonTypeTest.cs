@@ -15,11 +15,17 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
 using NUnit.Framework;
+using Amilious.Core.Extensions;
 
 namespace Amilious.Core.EditModeTests {
     
+    /// <summary>
+    /// This class is used to test the extension methods from <see cref="ComparisonTypeExtensions"/>.
+    /// </summary>
     public class ComparisonTypeTest {
 
+        #region Test Methods ///////////////////////////////////////////////////////////////////////////////////////////
+        
         [Test]
         public void Equal() {
             Assert.True(ComparisonType.Equal.Compare(1, 1));
@@ -68,6 +74,8 @@ namespace Amilious.Core.EditModeTests {
             Assert.False(ComparisonType.GreaterThanOrEqual.Compare(0,1));
             Assert.True(ComparisonType.GreaterThanOrEqual.Compare(1,1));
         }
+        
+        #endregion /////////////////////////////////////////////////////////////////////////////////////////////////////
         
     }
     

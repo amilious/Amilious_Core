@@ -1,7 +1,7 @@
 namespace Amilious.Core.Extensions {
     
     /// <summary>
-    /// This class is used to add methods to the int class.
+    /// This class is used to add methods to the <see cref="int"/> class.
     /// </summary>
     public static class IntExtensions {
 
