@@ -14,8 +14,8 @@
 //  using it legally. Check the asset store or join the discord for the license that applies for this script.         //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
-using Amilious.Core.Extensions;
 using UnityEngine;
+using Amilious.Core.Extensions;
 
 namespace Amilious.Core {
     
