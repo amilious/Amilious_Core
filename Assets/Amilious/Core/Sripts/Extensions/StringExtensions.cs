@@ -34,7 +34,7 @@ namespace Amilious.Core.Extensions {
         private const int MAX_STRING_BUILDERS = 20;
         public const string APPEND_C_FORMAT = "<color=#{0}>{1}</color>";
         public const string PADDING_FORMAT = "{0}{1} {2}";
-        #if UNITY_2019
+        #if UNITY_2019 || UNITY_2020
         private static readonly string[] Splitter = new string[1];
         #endif
         /// <summary>
@@ -218,7 +218,7 @@ namespace Amilious.Core.Extensions {
             return values.Count > 0;
         }
         
-        #if UNITY_2019
+        #if UNITY_2019 || UNITY_2020
         
         /// <summary>
         /// This method is used to add the split by string option to string.Split for older versions of C#.

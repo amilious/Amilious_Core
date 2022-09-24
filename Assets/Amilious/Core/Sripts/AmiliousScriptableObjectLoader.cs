@@ -19,7 +19,7 @@ using System.Linq;
 using UnityEngine;
 using System.Collections.Generic;
 
-#if UNITY_2019
+#if UNITY_2019 || UNITY_2020
 using Amilious.Core.Extensions;
 #endif
 
@@ -118,4 +118,5 @@ namespace Amilious.Core {
         #endregion /////////////////////////////////////////////////////////////////////////////////////////////////////
         
     }
+    
 }

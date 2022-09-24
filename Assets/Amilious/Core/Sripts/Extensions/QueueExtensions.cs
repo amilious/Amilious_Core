@@ -25,7 +25,7 @@ namespace Amilious.Core.Extensions {
 
         #region Public Methods /////////////////////////////////////////////////////////////////////////////////////////
         
-        #if UNITY_2019
+        #if UNITY_2019 || UNITY_2020
         
         /// <summary>
         /// This method is used to add a TryDequeue method to older versions of C#.

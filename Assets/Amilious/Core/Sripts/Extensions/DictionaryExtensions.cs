@@ -55,7 +55,7 @@ namespace Amilious.Core.Extensions {
             return false;
         }
         
-        #if UNITY_2019
+        #if UNITY_2019 || UNITY_2020
         
         /// <summary>
         /// This method is used to add the TryAdd method to a dictionary for older versions of C#
