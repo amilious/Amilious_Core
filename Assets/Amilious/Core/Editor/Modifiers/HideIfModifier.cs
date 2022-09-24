@@ -65,7 +65,7 @@ namespace Amilious.Core.Editor.Modifiers {
                     case SerializedPropertyType.Enum:
                         #if UNITY_2021_1_OR_NEWER
                         return castedAttribute.ValidateEnumValue(hiderProperty.enumValueIndex,
-                        showerProperty.enumValueFlag);
+                        hiderProperty.enumValueFlag);
                         #else
                         return castedAttribute.ValidateEnumValue(hiderProperty.enumValueIndex, -1);
                         #endif
