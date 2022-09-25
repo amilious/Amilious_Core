@@ -155,7 +155,7 @@ namespace Amilious.Core.Editor.Editors {
         /// <param name="iconResourcePath">The icon that you want to use for the button.</param>
         /// <param name="link">The url that should be triggered when the button is clicked.</param>
         /// <param name="linkName">The text displayed on the button.</param>
-        private void AddLinkButton(string toolTip, string iconResourcePath, string link, string linkName = null) {
+        protected void AddLinkButton(string toolTip, string iconResourcePath, string link, string linkName = null) {
             var icon = Resources.Load<Texture>(iconResourcePath);
             if(icon==null) icon = EditorGUIUtility.IconContent(iconResourcePath).image;
             //icon ??= EditorGUIUtility.IconContent(iconResourcePath).image;
@@ -170,7 +170,7 @@ namespace Amilious.Core.Editor.Editors {
         /// <param name="icon">The icon that you want to use for the button.</param>
         /// <param name="link">The url that should be triggered when the button is clicked.</param>
         /// <param name="linkName">The text displayed on the button.</param>
-        private void AddLinkButton(string toolTip, Texture icon, string link, string linkName = null) {
+        protected void AddLinkButton(string toolTip, Texture icon, string link, string linkName = null) {
             if(string.IsNullOrWhiteSpace(link)||icon==null) return;
             _links.Add(new LinkInfo{Link = link, 
                 GUIContent = new GUIContent(linkName, icon, toolTip)});
