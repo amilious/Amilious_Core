@@ -240,12 +240,14 @@ namespace Amilious.Core.Editor.Editors {
         /// </summary>
         private void DrawLinks() {
             if(_links.Count == 0) return;
-            GUILayout.BeginHorizontal("Project Links:",EditorStyles.helpBox, GUILayout.Height(20));
+            GUILayout.Space(5);
+            GUILayout.BeginHorizontal("",GUIStyle.none, GUILayout.Height(20));
             GUILayout.FlexibleSpace();
             //buttons
             var options = new [] {GUILayout.ExpandWidth(false), GUILayout.MaxHeight(22) };
             foreach(var link in _links) 
                 if(GUILayout.Toggle(false,link.GUIContent,_style,options)) Application.OpenURL(link.Link);
+            GUILayout.FlexibleSpace();
             GUILayout.EndHorizontal();
         }
         
