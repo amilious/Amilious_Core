@@ -17,8 +17,8 @@
 using System;
 using System.Text;
 using UnityEngine;
-using System.Collections.Generic;
 using System.Globalization;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace Amilious.Core.Extensions {
@@ -34,6 +34,7 @@ namespace Amilious.Core.Extensions {
         private const int MAX_STRING_BUILDERS = 20;
         public const string APPEND_C_FORMAT = "<color=#{0}>{1}</color>";
         public const string PADDING_FORMAT = "{0}{1} {2}";
+        public const string LINK_FORMAT = "<link=\"{0}\">{1}</link>";
         #if UNITY_2019 || UNITY_2020
         private static readonly string[] Splitter = new string[1];
         #endif
@@ -108,6 +109,25 @@ namespace Amilious.Core.Extensions {
         /// <returns>The string formatted in the given color.</returns>
         public static string SetColor(this string text, Color color) {
             return string.Format(APPEND_C_FORMAT, color.HtmlRGBA(), text);
+        }
+
+        /// <summary>
+        /// This method is used to make the given text a link.
+        /// </summary>
+        /// <param name="str">The string that you want to make a link.</param>
+        /// <param name="id">The id or id segments for the link.</param>
+        /// <returns>The string as a link.</returns>
+        public static string MakeLink(this string str, params string[] id) {
+            if(id == null || id.Length == 0) return $"<link>{str}</link>";
+            if(id.Length == 1) return string.Format(LINK_FORMAT, id, str);
+            var sb = RentStringBuilder().Clear();
+            sb.Append("<link=\"");
+            sb.Append(id[0]);
+            for(var i = 1; i < id.Length; i++) sb.Append('|').Append(id[i]);
+            sb.Append("\">").Append(str).Append("</link>");
+            var result = sb.ToString();
+            ReturnStringBuilder(sb);
+            return result;
         }
 
         /// <summary>
