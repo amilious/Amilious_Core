@@ -28,11 +28,15 @@ namespace Amilious.Core.Attributes {
         /// </summary>
         public string PropertyName { get; protected set; }
         
+        #if UNITY_EDITOR
+        
         /// <summary>
         /// This property is used to cache the comparison property.
         /// </summary>
         public UnityEditor.SerializedProperty ComparisonProperty { get; set; }
 
+        #endif
+        
         /// <summary>
         /// If this value is true the comparison value was provided, otherwise it was not.
         /// </summary>
@@ -45,7 +49,6 @@ namespace Amilious.Core.Attributes {
         
         #endregion /////////////////////////////////////////////////////////////////////////////////////////////////////
         
-
         #region Public Methods /////////////////////////////////////////////////////////////////////////////////////////
         
         /// <summary>
